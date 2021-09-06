@@ -7,31 +7,24 @@ class CardContainer extends Component{
         this.state = {
             canciones: [],
             isLoaded: false,
-            /* nextUrl: '' */
-
         }
     }
 
-    componentDidMount(){ //Aqui adentro traemos la informacion (de la API)
-        
-        console.log('monte Canciones')
-
-        let url = 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0';
+    componentDidMount(){
+        let url = 'https://api.themoviedb.org/3/movie/popular?api_key=c9e6637cde2d15c9a94d98f3a8ece21d&language=en-US&page=1'
         console.log(url)
-       
+
         fetch(url)
         .then( response => response.json())
         .then( data => {
-            console.log(data);
+            console.log(data)
             this.setState({
                 canciones: data.data,
                 isLoaded: true,
             })
         })
-        .catch( e => console.log(e))
-
     }
-
+    
     render(){
         return(
             <section className="card-container">
