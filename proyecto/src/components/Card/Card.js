@@ -1,12 +1,31 @@
 import React, {Component} from 'react';
+import './Card.css'
 
 class Card extends Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
-
+            text: 'Ver más',
+            viewMore: false,
         }
     }
+
+    viewMore(){
+        if(this.state.viewMore){
+            this.setState({
+                text: 'Ver más',
+                viewMore: false,
+
+            })
+        }else{
+            this.setState({
+                text: 'Ver menos',
+                viewMore: true,
+
+            })
+        }
+    }
+    
     render(){
         return(
             <article>
@@ -18,15 +37,16 @@ class Card extends Component{
                     <i className="far fa-window-close"></i>
                 </section>
                 <main>
-                    <img src="/images/image-default.png" alt="" />
-                    <h3>Título/ Nombre</h3>
-                    <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque velit minus facere laboriosam voluptatem impedit ea unde labore optio eius quis, dignissimos expedita. Culpa, soluta perspiciatis! Sint, laboriosam cum.</p>
-                    <section className="aditional-info">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
+                    <img src={`https://image.tmdb.org/t/p/w500${this.props.dataPelicula.poster_path}`} alt="" />
+                    <h3>{this.props.dataPelicula.title}</h3>
+                    <p className="description">{this.props.dataPelicula.overview}</p>
+                    <section className={`aditional-info ${this.state.viewMore ? 'show' : 'hide'}`}>
+                        <p>{this.props.dataPelicula.release_date}</p>
+                        <p>{this.props.dataPelicula.vote_average}</p>
+                        <p>{this.props.dataPelicula.original_language}</p>
                     </section>
-                    <a href="/">Ver más</a>
+                    <p className='more' onClick={() => this.viewMore()}>{this.state.text}</p>
+                    <p className='borrar' onClick={() => this.props.remove(this.props.dataPelicula.id)}>Borrar</p>
                 </main>
             </article>
         )
