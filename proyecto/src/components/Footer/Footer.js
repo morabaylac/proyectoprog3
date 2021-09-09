@@ -20,7 +20,7 @@ class Footer extends Component{
                     <li>mora baylac</li>
             </ul>
             <div className="tmdb">
-                <img src="" className="logo-tmdb" alt="tmdb" />
+                <img src="/assets/images/tmdb.png" className="logo-tmdb" alt="tmdb" />
             </div>
         </footer>
         )

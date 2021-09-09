@@ -13,7 +13,7 @@
     width: 15%;
 }
 .desktop .logo .logo-footer{
-    width: 15%;
+    width: 20%;
 }
 .desktop .nombres {
     display: flex;
@@ -41,6 +41,6 @@ footer .tmdb{
     width: 15%;
 }
 footer .tmdb .logo-tmdb{
-    width: 18%;
+    width: 70%;
     float: right;
 }
