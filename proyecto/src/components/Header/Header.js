@@ -10,9 +10,8 @@ class Header extends Component{
     render(){
         return(
             <header>
-                <h1>Titulo/Nombre de App</h1>
+                <h1>Play</h1>
                 <section>
-                    <p>Ordenar ASC/ DESC</p>
                     <i className="fas fa-th"></i>
                     <i className="fas fa-align-justify"></i>
                 </section>

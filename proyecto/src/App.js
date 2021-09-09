@@ -9,7 +9,6 @@ function App() {
       <Header />
 
       <main>
-        <button type="button">Cargar más tarjetas</button>
         <CardContainer />
       </main>
 

@@ -69,7 +69,7 @@ class CardContainer extends Component{
             <section className="card-container">
             {
                 this.state.isLoaded === false ?
-                <p>Cargando...</p> :
+                <iframe src="https://giphy.com/embed/xTkcEQACH24SMPxIQg" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> :
                 this.state.peliculas.map((pelicula, idx) => 
                 <Card key={pelicula.title + idx} dataPelicula={pelicula} remove={(peliculaABorrar) => this.deleteCard(peliculaABorrar)} />)
             }

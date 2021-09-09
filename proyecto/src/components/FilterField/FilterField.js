@@ -25,9 +25,11 @@ class FilterField extends Component{
 
     render(){
         return (
+            <React.Fragment>
             <form action="" onSubmit={(event) => this.evitarSubmit(event)}> 
                 <input type='text' placeholder='Search' onChange={(event) => this.controlarCambios(event)} value={this.state.filterBy}/>
             </form>
+            </React.Fragment>
 
         )
     }
