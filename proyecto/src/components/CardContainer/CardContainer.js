@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Card from '../Card/Card';
-import './CardContainer.css'
+import './CardContainer.css';
+import FilterField from '../FilterField/FilterField';
 
 class CardContainer extends Component{
     constructor(){
@@ -9,6 +10,7 @@ class CardContainer extends Component{
             peliculas: [],
             isLoaded: false,
             page: '',
+            peliculasIniciales: [],
         }
     }
 
@@ -23,6 +25,7 @@ class CardContainer extends Component{
             this.setState({
                 peliculas: data.results,
                 isLoaded: true,
+                peliculasIniciales: data.results,
             })
         })
         .catch(error => console.log(error))
@@ -48,10 +51,21 @@ class CardContainer extends Component{
             peliculas: peliculasQueQuedan,
         })
     }
+    filtrarPeliculas(textoAFiltrar){
+        // let peliculasFiltradas = this.state.peliculasIniciales.filter( pelicula => pelicula.title.toLowerCase().includes(textoAFiltrar.toLowerCase())); //Tengo una funcion que lo que hace es filtrar los personajes y compara si el nombre del personaje tiene textoAFIltrar
+        let peliculasFiltradas = this.state.peliculasIniciales.filter( pelicula => pelicula.title.toLowerCase().includes(textoAFiltrar.toLowerCase()))
+        this.setState({
+            peliculas: peliculasFiltradas,
+        })
+    }; 
     
     render(){
         return(
             <React.Fragment>
+                <div>
+                <FilterField filtrarPeliculas={(textoAFiltrar) => this.filtrarPeliculas(textoAFiltrar)}/>
+                </div>
+                
             <section className="card-container">
             {
                 this.state.isLoaded === false ?
