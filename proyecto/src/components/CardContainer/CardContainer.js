@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Card from '../Card/Card';
-import './cardContainer.css';
+import './CardContainer.css';
 import FilterField from '../FilterField/FilterField';
 
 class CardContainer extends Component{
