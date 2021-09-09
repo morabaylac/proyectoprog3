@@ -1,0 +1,46 @@
+.desktop{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    padding-bottom: 15px;
+}
+.desktop .nombres li:last-child{
+    border-right: none;
+}
+.desktop .logo{
+    width: 15%;
+}
+.desktop .logo .logo-footer{
+    width: 15%;
+}
+.desktop .nombres {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.desktop .nombres li  {
+    margin: 5px;
+    padding: 3px 20px;
+    border-right: 2px solid white;
+    color: white;
+    text-transform: capitalize;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+
+/* .desktop .nombres li a:hover {
+    background-color: rgb(125, 0, 0);
+    text-transform: capitalize;
+  } */
+footer .tmdb{
+    width: 15%;
+}
+footer .tmdb .logo-tmdb{
+    width: 18%;
+    float: right;
+}

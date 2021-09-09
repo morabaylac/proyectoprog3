@@ -1,16 +1,11 @@
-
 * {
     box-sizing: border-box;
     font-family: 'Assistant', sans-serif;
-}
-html{
-    background: none;
-    line-height: unset;
 }
 body {
     width: 100%;
     background-image: url(../images/fondo.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
-    margin: 30px;
+    margin: 0px;
 }

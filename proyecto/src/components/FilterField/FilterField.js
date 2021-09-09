@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './filterField.css'
 
 class FilterField extends Component{
     constructor(){

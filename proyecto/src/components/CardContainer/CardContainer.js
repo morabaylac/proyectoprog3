@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Card from '../Card/Card';
-import './CardContainer.css';
+import './cardContainer.css';
 import FilterField from '../FilterField/FilterField';
 
 class CardContainer extends Component{
@@ -62,7 +62,7 @@ class CardContainer extends Component{
     render(){
         return(
             <React.Fragment>
-                <div>
+                <div className='search'>
                 <FilterField filtrarPeliculas={(textoAFiltrar) => this.filtrarPeliculas(textoAFiltrar)}/>
                 </div>
                 

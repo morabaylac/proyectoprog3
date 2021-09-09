@@ -1,3 +1,7 @@
+.search{
+    margin-top: 140px;
+    width: 20%;
+}
 .card-container{
     display: flex;
     flex-wrap: wrap;
