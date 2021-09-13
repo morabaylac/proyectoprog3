@@ -7,7 +7,8 @@ class Header extends Component{
         this.state = {
             filterBy: '', 
             resultados: false,
-            buttonRow: false
+            buttonRow: true, 
+            buttonColumn: false
         }
     }
 
@@ -17,13 +18,17 @@ class Header extends Component{
             this.setState({
                 buttonRow: false
             })
-        }else{
-            console.log("Soy false");
-            this.setState({
-                buttonRow: true
-            })
         }
 
+    }
+
+    buttonColumn(){
+        if(this.state.buttonColumn){
+            console.log("Soy true");
+            this.setState({
+                buttonColumn: true
+            })
+        }
     }
 
     evitarSubmit(e){ 
@@ -52,8 +57,8 @@ class Header extends Component{
                 </form> 
                 </div>
                 <section className= "iconos">
-                    <i className="fas fa-th button-row" onClick = {() => this.buttonRow()}></i>
-                    <i className="fas fa-align-justify button-column" onClick = {() => this.buttonRow()}></i>
+                    <i className="fas fa-th button-row" onClick = {(boton) => this.buttonRow()}></i>
+                    <i className="fas fa-align-justify button-column" onClick = {() => this.buttonColumn()}></i>
                 </section> 
                 
             </header>
