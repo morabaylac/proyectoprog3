@@ -2,9 +2,14 @@ article{
     padding: 10px;
     margin: 20px;
     width: 20%;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+    /* background: #fff; */
+    /* border-radius: 5px; */
+    /* box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15); */
+    border-radius: 20px;
+    background: #302c2e;
+    box-shadow:  5px 5px 10px #1b1a1b, 
+             -5px -5px 10px #6b686d;
+    color: white
 }
 main img{
     width: 100%;
@@ -15,7 +20,11 @@ article:hover,
 box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
 }
 .more{
-    color: blue;
+    border: 2px solid white;
+    border-radius: 20px;
+    width: 26%;
+    padding: 5px;
+    margin: 10px;
 }
 .more:hover{
     text-decoration: underline;
@@ -26,4 +35,14 @@ box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
 }
 .hide{
     display: none
+}
+.navigation .borrar{
+    margin-bottom: 10px;
+}
+.description{
+    text-align: justify;
+}
+
+main h3{
+    margin: 0px 10px;
 }

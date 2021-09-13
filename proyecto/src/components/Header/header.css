@@ -3,9 +3,40 @@ header {
     position: fixed;
     top: 0;
     backdrop-filter: blur(10px);
+    display: flex;
+    
 }
 header .logo {
     width: 5%;
     margin: 0 40px;
     padding: 15px;
+}
+.search{
+    margin-top: 35px;
+    width: 20%;
+    margin-left: 40px;
+}
+form input{
+    width: 100%;
+    background-color: #302c2e;
+    padding: 10px;
+    border-radius: 10px;
+    border:none;
+    color: white;
+}
+.iconos{
+    margin-top: 35px;
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 40px;
+   
+}
+.iconos .button-row{
+    margin: 0px 10px;
+    color: #302c2e;
+}
+
+.iconos .button-column{
+    color: #302c2e;
 }

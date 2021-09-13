@@ -1,0 +1,23 @@
+main{
+    display: flex;
+    flex-direction: column;
+}
+.card-container-row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+
+.card-container-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.agregar {
+    border: 2px solid white;
+    border-radius: 20px;
+    width: 10%;
+    padding: 8px;
+    justify-content: center;
+}

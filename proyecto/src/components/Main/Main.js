@@ -1,24 +1,24 @@
 import React, {Component} from 'react';
 import Card from '../Card/Card';
-import './CardContainer.css';
-import FilterField from '../FilterField/FilterField';
+import './Main.css';
+import Header from '../Header/Header'
 
-class CardContainer extends Component{
-    constructor(){
-        super()
+class Main extends Component{
+    constructor(props){
+        super(props)
         this.state = {
             peliculas: [],
             isLoaded: false,
-            page: '',
+            page: 1,
             peliculasIniciales: [],
+            url: `https://api.themoviedb.org/3/movie/popular?api_key=c9e6637cde2d15c9a94d98f3a8ece21d&language=en-US&page=`
         }
     }
 
     componentDidMount(){
-        let url = 'https://api.themoviedb.org/3/movie/popular?api_key=c9e6637cde2d15c9a94d98f3a8ece21d&language=en-US&page='
-        console.log(url)
+        console.log(this.state.url + this.state.page)
 
-        fetch(url)
+        fetch(this.state.url + this.state.page)
         .then( response => response.json())
         .then( data => {
             console.log(data)
@@ -26,15 +26,16 @@ class CardContainer extends Component{
                 peliculas: data.results,
                 isLoaded: true,
                 peliculasIniciales: data.results,
+                page: data.page + 1
             })
         })
         .catch(error => console.log(error))
     }
 
     addMore(){
-        let url = this.state.page;
+        
 
-        fetch(url)
+        fetch(this.state.url + this.state.page)
         .then(response => response.json())
         .then(data => {
             this.setState({
@@ -52,7 +53,7 @@ class CardContainer extends Component{
         })
     }
     filtrarPeliculas(textoAFiltrar){
-        // let peliculasFiltradas = this.state.peliculasIniciales.filter( pelicula => pelicula.title.toLowerCase().includes(textoAFiltrar.toLowerCase())); //Tengo una funcion que lo que hace es filtrar los personajes y compara si el nombre del personaje tiene textoAFIltrar
+       //Tengo una funcion que lo que hace es filtrar los personajes y compara si el nombre del personaje tiene textoAFIltrar
         let peliculasFiltradas = this.state.peliculasIniciales.filter( pelicula => pelicula.title.toLowerCase().includes(textoAFiltrar.toLowerCase()))
         this.setState({
             peliculas: peliculasFiltradas,
@@ -62,11 +63,13 @@ class CardContainer extends Component{
     render(){
         return(
             <React.Fragment>
-                <div className='search'>
-                <FilterField filtrarPeliculas={(textoAFiltrar) => this.filtrarPeliculas(textoAFiltrar)}/>
-                </div>
+
+                <Header filtrarPeliculas={(textoAFiltrar) => this.filtrarPeliculas(textoAFiltrar)}/>
+
+            <main> 
                 
-            <section className="card-container">
+                
+            <section className={`${this.props.buttonRow ? 'card-container-column': 'card-container-row'}`}>
             {
                 this.state.isLoaded === false ?
                 <iframe src="https://giphy.com/embed/xTkcEQACH24SMPxIQg" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> :
@@ -74,10 +77,13 @@ class CardContainer extends Component{
                 <Card key={pelicula.title + idx} dataPelicula={pelicula} remove={(peliculaABorrar) => this.deleteCard(peliculaABorrar)} />)
             }
             </section>
-            <button onClick={()=> this.addMore()}>Mas peliculas</button>
+            <button className= "agregar" onClick={()=> this.addMore()}> Más películas</button>
+            
+            </main>
+
             </React.Fragment>
         )
     }
 }
 
-export default CardContainer
+export default Main
