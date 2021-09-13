@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './Card.css'
+import './card.css'
 
 class Card extends Component{
     constructor(props){
@@ -15,13 +15,11 @@ class Card extends Component{
             this.setState({
                 text: 'Ver más',
                 viewMore: false,
-
             })
         }else{
             this.setState({
                 text: 'Ver menos',
                 viewMore: true,
-
             })
         }
     }
@@ -39,7 +37,6 @@ class Card extends Component{
                 <main>
                     <img src={`https://image.tmdb.org/t/p/w500${this.props.dataPelicula.poster_path}`} alt="" />
                     <h3>{this.props.dataPelicula.title}</h3>
-            
                     <section className={`aditional-info ${this.state.viewMore ? 'show' : 'hide'}`}>
                         <p className="description">{this.props.dataPelicula.overview}</p>
                         <p>Release Date: {this.props.dataPelicula.release_date}</p>

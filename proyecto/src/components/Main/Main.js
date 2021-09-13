@@ -1,23 +1,24 @@
 import React, {Component} from 'react';
 import Card from '../Card/Card';
-import './Main.css';
+import './main.css';
 import Header from '../Header/Header'
 
 class Main extends Component{
-    constructor(props){
-        super(props)
+    constructor(){
+        super()
         this.state = {
             peliculas: [],
             isLoaded: false,
             page: 1,
             peliculasIniciales: [],
-            url: `https://api.themoviedb.org/3/movie/popular?api_key=c9e6637cde2d15c9a94d98f3a8ece21d&language=en-US&page=`
+            url: `https://api.themoviedb.org/3/movie/popular?api_key=c9e6637cde2d15c9a94d98f3a8ece21d&language=en-US&page=`,
+            buttonRow: false, 
+            // buttonColumn: false,
         }
     }
 
     componentDidMount(){
         console.log(this.state.url + this.state.page)
-
         fetch(this.state.url + this.state.page)
         .then( response => response.json())
         .then( data => {
@@ -33,8 +34,6 @@ class Main extends Component{
     }
 
     addMore(){
-        
-
         fetch(this.state.url + this.state.page)
         .then(response => response.json())
         .then(data => {
@@ -52,6 +51,7 @@ class Main extends Component{
             peliculas: peliculasQueQuedan,
         })
     }
+
     filtrarPeliculas(textoAFiltrar){
        //Tengo una funcion que lo que hace es filtrar los personajes y compara si el nombre del personaje tiene textoAFIltrar
         let peliculasFiltradas = this.state.peliculasIniciales.filter( pelicula => pelicula.title.toLowerCase().includes(textoAFiltrar.toLowerCase()))
@@ -59,26 +59,36 @@ class Main extends Component{
             peliculas: peliculasFiltradas,
         })
     }; 
+
+    buttonRow(){ 
+        console.log("fila");
+        this.setState({
+            buttonRow: true
+        })
+    }
+
+    buttonColumn(){
+            console.log("columna");
+            this.setState({
+                buttonRow: false
+            }) 
+    }
     
     render(){
         return(
             <React.Fragment>
 
-                <Header filtrarPeliculas={(textoAFiltrar) => this.filtrarPeliculas(textoAFiltrar)}/>
-
-            <main> 
-                
-                
-            <section className={`${this.props.buttonRow ? 'card-container-column': 'card-container-row'}`}>
-            {
-                this.state.isLoaded === false ?
-                <iframe src="https://giphy.com/embed/xTkcEQACH24SMPxIQg" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> :
-                this.state.peliculas.map((pelicula, idx) => 
-                <Card key={pelicula.title + idx} dataPelicula={pelicula} remove={(peliculaABorrar) => this.deleteCard(peliculaABorrar)} />)
-            }
-            </section>
-            <button className= "agregar" onClick={()=> this.addMore()}> Más películas</button>
-            
+            <Header buttonRow={() => this.buttonRow()} buttonColumn={() => this.buttonColumn()} filtrarPeliculas={(textoAFiltrar) => this.filtrarPeliculas(textoAFiltrar)}/>
+            <main>       
+                <section className={`${this.state.buttonRow ? 'card-container-column': 'card-container-row'}`}>
+                {
+                    this.state.isLoaded === false ?
+                    <iframe src="https://giphy.com/embed/xTkcEQACH24SMPxIQg" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> :
+                    this.state.peliculas.map((pelicula, idx) => 
+                    <Card key={pelicula.title + idx} dataPelicula={pelicula} remove={(peliculaABorrar) => this.deleteCard(peliculaABorrar)} />)
+                }
+                </section>
+                <button className= "agregar" onClick={()=> this.addMore()}> Más películas</button>
             </main>
 
             </React.Fragment>
