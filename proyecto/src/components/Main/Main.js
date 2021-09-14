@@ -83,7 +83,7 @@ class Main extends Component{
                 <section className={`${this.state.buttonRow ? 'card-container-column': 'card-container-row'}`}>
                 {
                     this.state.isLoaded === false ?
-                    <iframe src="https://giphy.com/embed/xTkcEQACH24SMPxIQg" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> :
+                    <iframe src="https://giphy.com/embed/xTkcEQACH24SMPxIQg" title='gif' width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> :
                     this.state.peliculas.map((pelicula, idx) => 
                     <Card key={pelicula.title + idx} dataPelicula={pelicula} remove={(peliculaABorrar) => this.deleteCard(peliculaABorrar)} />)
                 }

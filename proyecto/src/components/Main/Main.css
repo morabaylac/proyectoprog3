@@ -5,8 +5,10 @@ main{
 .card-container-row{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 100px;
+    /* justify-content: space-around; */
+    justify-content: flex-start;
+    margin: 120px 30px 0;
+    align-items: flex-start;
 }
 .card-container-column{
     display: flex;
@@ -30,5 +32,11 @@ main{
     border-radius: 20px;
     width: 10%;
     padding: 8px;
-    justify-content: center;
+    margin: 20px auto;    
+}
+.agregar:hover{
+    text-decoration: underline;
+    cursor: pointer;
+    box-shadow:  5px 5px 5px #1b1a1b, 
+             -5px -5px 5px #6b686d;
 }

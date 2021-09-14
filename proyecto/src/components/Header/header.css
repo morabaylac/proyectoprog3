@@ -35,7 +35,9 @@ form input{
 .iconos .button-row{
     margin: 0px 10px;
     color: #302c2e;
+    font-size: 30px;
 }
 .iconos .button-column{
     color: #302c2e;
+    font-size: 30px;
 }

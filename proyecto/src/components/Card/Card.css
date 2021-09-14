@@ -1,23 +1,31 @@
 article{
-    padding: 10px;
-    margin: 20px;
-    width: 20%;
-    /* background: #fff; */
-    /* border-radius: 5px; */
-    /* box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15); */
+    padding: 15px;
+    margin: 24px;
+    width: 22%;
     border-radius: 20px;
     background: #302c2e;
     box-shadow:  5px 5px 10px #1b1a1b, 
              -5px -5px 10px #6b686d;
-    color: white
+    color: white;
+}
+article:hover,
+.active{
+box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
+}
+main h3{
+    margin: 0px 10px;
 }
 main img{
     width: 100%;
     margin-bottom: 20px; 
 }
-article:hover,
-.active{
-box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
+.description{
+    text-align: justify;
+}
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .more{
     border: 2px solid white;
@@ -29,6 +37,12 @@ box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
 .more:hover{
     text-decoration: underline;
     cursor: pointer;
+    box-shadow:  3px 3px 5px #1b1a1b, 
+             -3px -3px 5px #6b686d;
+}
+.borrar{
+    font-size: 18px;
+    margin: 10px;
 }
 .show{
     display: block
@@ -36,12 +50,5 @@ box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
 .hide{
     display: none
 }
-.navigation .borrar{
-    margin-bottom: 10px;
-}
-.description{
-    text-align: justify;
-}
-main h3{
-    margin: 0px 10px;
-}
+
+

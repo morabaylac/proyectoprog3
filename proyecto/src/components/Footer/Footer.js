@@ -20,7 +20,7 @@ class Footer extends Component{
                     <li>mora baylac</li>
             </ul>
             <div className="tmdb">
-                <img src="/assets/images/tmdb.png" className="logo-tmdb" alt="tmdb" />
+               <a href="https://www.themoviedb.org/?language=es"><img src="/assets/images/tmdb.png" className="logo-tmdb" alt="tmdb" /></a> 
             </div>
         </footer>
         )
