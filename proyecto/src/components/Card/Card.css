@@ -1,6 +1,6 @@
 article{
     padding: 15px;
-    margin: 24px;
+    margin: 23px;
     width: 22%;
     border-radius: 20px;
     background: #302c2e;
@@ -18,6 +18,7 @@ main h3{
 main img{
     width: 100%;
     margin-bottom: 20px; 
+    border-radius: 20px;
 }
 .description{
     text-align: justify;

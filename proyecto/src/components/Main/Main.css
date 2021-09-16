@@ -2,6 +2,11 @@ main{
     display: flex;
     flex-direction: column;
 }
+main .no-results {
+    color: white;
+    margin: 273px auto;
+    font-size: 30px;
+}
 .card-container-row{
     display: flex;
     flex-wrap: wrap;
@@ -10,22 +15,44 @@ main{
     margin: 120px 30px 0;
     align-items: flex-start;
 }
+
 .card-container-column{
     display: flex;
     flex-direction: column;
+    margin: 120px 30px 0;
 }
 .card-container-column article{
     display: flex;
-    width: 100%
+    width: 96.5%;
+    height: 235px;
 }
 .card-container-column article main{
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: flex-start;
 }
 .card-container-column article main img{
-    width: 20%;
+    width: 9.3%;
+    border-radius: 20px;
+    margin-bottom: unset;
+}
+.card-container-column article main h3{
+    margin: 0px 15px;
+
+}
+.card-container-column article main .navigation{
+    width: 82%;
+    justify-content: flex-end;
+    height: 210px;
+    align-items: flex-end;
+
+}
+.card-container-column article main .navigation .more{
+    width: 10%;
+}
+.card-container-column .description{
+    margin-top: 0px;
 }
 .agregar {
     border: 2px solid white;
