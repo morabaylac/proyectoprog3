@@ -32,11 +32,6 @@
     justify-content: center;
     font-size: 15px;
 }
-
-/* .desktop .nombres li a:hover {
-    background-color: rgb(125, 0, 0);
-    text-transform: capitalize;
-  } */
 footer .tmdb{
     width: 15%;
 }

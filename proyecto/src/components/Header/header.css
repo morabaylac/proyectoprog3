@@ -3,8 +3,7 @@ header {
     position: fixed;
     top: 0;
     backdrop-filter: blur(10px);
-    display: flex;
-    
+    display: flex;   
 }
 header .logo {
     width: 5%;
@@ -30,7 +29,6 @@ form input{
     display: flex;
     justify-content: flex-end;
     margin-right: 40px;
-   
 }
 .iconos .button-row{
     margin: 0px 10px;

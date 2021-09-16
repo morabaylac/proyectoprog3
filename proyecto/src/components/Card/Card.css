@@ -5,12 +5,12 @@ article{
     border-radius: 20px;
     background: #302c2e;
     box-shadow:  5px 5px 10px #1b1a1b, 
-             -5px -5px 10px #6b686d;
+                -5px -5px 10px #6b686d;
     color: white;
 }
 article:hover,
 .active{
-box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
+box-shadow: unset;
 }
 main h3{
     margin: 0px 10px;

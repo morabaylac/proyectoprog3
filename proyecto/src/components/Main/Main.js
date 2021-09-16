@@ -13,7 +13,6 @@ class Main extends Component{
             peliculasIniciales: [],
             url: `https://api.themoviedb.org/3/movie/popular?api_key=c9e6637cde2d15c9a94d98f3a8ece21d&language=en-US&page=`,
             buttonRow: false, 
-            // buttonColumn: false,
         }
     }
 
@@ -53,7 +52,7 @@ class Main extends Component{
     }
 
     filtrarPeliculas(textoAFiltrar){
-       //Tengo una funcion que lo que hace es filtrar los personajes y compara si el nombre del personaje tiene textoAFIltrar
+        //Tengo una funcion que lo que hace es filtrar los personajes y compara si el nombre del personaje tiene textoAFIltrar
         let peliculasFiltradas = this.state.peliculasIniciales.filter( pelicula => pelicula.title.toLowerCase().includes(textoAFiltrar.toLowerCase()))
         this.setState({
             peliculas: peliculasFiltradas,

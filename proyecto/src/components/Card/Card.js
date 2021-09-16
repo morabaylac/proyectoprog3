@@ -27,7 +27,6 @@ class Card extends Component{
     render(){
         return(
             <article>
-                
                 <main>
                     <img src={`https://image.tmdb.org/t/p/w500${this.props.dataPelicula.poster_path}`} alt="" />
                     <h3>{this.props.dataPelicula.title}</h3>
@@ -38,7 +37,7 @@ class Card extends Component{
                         <p>Original Language: {this.props.dataPelicula.original_language}</p>
                     </section>
                     <section className="navigation">
-                    {/* <div>
+                        {/* <div>
                             <i className="fas fa-chevron-left"></i>
                             <i className="fas fa-chevron-right"></i>
                         </div> */}
